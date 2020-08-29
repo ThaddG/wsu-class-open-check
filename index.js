@@ -1,13 +1,8 @@
 const puppeteer = require('puppeteer');
-const nodemailer = require('nodemailer'); //currently not using cuz i can't get it to work with puppeteer
-const cron = require('node-cron');
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-// i think there is a puppeteer function for this called page.waitFor()
-// but this code works
 const delay = ms => new Promise(res => setTimeout(res, ms));
-
-let classIsOpen = 'NOT OPEN';
 
 const Email = {
   sendEmail: function(mailContent) {
@@ -83,18 +78,18 @@ cron.schedule('*/5 * * * *', () => {
   
     await page.screenshot({path: 'testingthepuppet6.png'});
   
-    let mob = await page.evaluate((classIsOpen) => {
+    let mob = await page.evaluate(() => {
       let meep = document.querySelector('.status-bold');
+      let classIsOpen = "if you see this it didn't work";
       if (meep.innerHTML === "FULL") {
         console.log("STILL FULL");
-        classIsOpen = "STILL FULL"
+        classIsOpen = "STILL FULL";
       } else {
         console.log("OPEN...or something went wrong");
-        classIsOpen = "IT'S OPEN...or something went wrong"
+        classIsOpen = "IT'S OPEN...or something went wrong";
       }
       return classIsOpen
-    }, classIsOpen)
-    // await page.screenshot({path: 'testingthepuppet7.png'});
+    })
   
     await browser.close();
     return mob;
