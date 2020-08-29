@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const nodemailer = require('nodemailer');
+const cron = require('node-cron');
 require('dotenv').config();
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
