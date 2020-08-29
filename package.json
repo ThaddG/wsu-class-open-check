@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.4.11",
+    "puppeteer": "^5.2.1"
+  }
+}
