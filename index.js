@@ -18,7 +18,7 @@ const Email = {
     let mailOptions = {
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: 'CRN 12027 Class Check',
+      subject: `CRN ${process.env.CRN} Class Check`,
       text: mailContent
     };
 
