@@ -73,6 +73,8 @@ cron.schedule("*/5 * * * *", () => {
     // SELECT A TERM
     await page.click(".select2-choice");
     await delay(3000);
+    // await page.screenshot({ path: "terms.png" }); // uncheck this when i need to see if the terms changed
+    await page.keyboard.press("ArrowDown");
     await page.keyboard.press("Enter");
     await page.click("#term-go");
   
@@ -82,7 +84,7 @@ cron.schedule("*/5 * * * *", () => {
     await page.type("#txt_courseNumber", process.env.COURSENUMBER);
     await page.type("#txt_keywordlike", process.env.CRN);
     await page.click("#search-go");
-  
+
     await page.waitForSelector(".status-bold", { visible: true });
   
     await page.screenshot({ path: "testingthepuppet6.png" });
