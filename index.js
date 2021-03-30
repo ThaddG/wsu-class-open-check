@@ -5,8 +5,6 @@ require("dotenv").config();
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
-let classIsOpen = "NOT OPEN";
-
 const Email = {
   sendEmail: function (mailContent) {
     let transporter = nodemailer.createTransport({
