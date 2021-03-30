@@ -20,7 +20,7 @@ const Email = {
     let mailOptions = {
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: `CRN ${process.env.CRN} Class Check`,
+      subject: `CRN ${process.env.CRN} Class Check (${mailContent.classIsOpen})`,
       text: `${mailContent.classIsOpen} and ${mailContent.waitListOpen}`,
       html: `
         <h3>Open Status: ${mailContent.classIsOpen}</h3>
