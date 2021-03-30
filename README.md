@@ -5,7 +5,7 @@
 #### Default interval is 5 minutes
 
 # To Use:
-## 1) npm install / yarn add
+## 1) npm install / yarn install
    * puppeteer
    * nodemailer
    * node-cron
